@@ -16,6 +16,8 @@ Caso não tenha permissão para rodar o código, execute `chmod +x ./install_Lin
 
 - [**install_MacOS.sh**](install_MacOS.sh): Feita para MacOS. Instalação similar à do Ubuntu.
 
+Se quiser aprender um pouco mais, a lista de bibliotecas instaladas pode ser vista em [**packages_Linux.yaml**](packages_Linux.yaml) ou [**packages_MacOS.yaml**](packages_MacOS.yaml).
+
 ## Consigo instalar no Windows?
 Sim! Mas é um pouco mais complicado...
 
