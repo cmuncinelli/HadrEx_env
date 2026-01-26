@@ -8,7 +8,7 @@ Como este repositório é público, você pode baixá-lo simplesmente clicando n
 
 Feito isso, extraia o arquivo.
 
-Dentro da pasta gerada, há três opções de instalação, de acordo com seu sistema operacional:
+Dentro da pasta gerada, há duas opções de instalação, de acordo com seu sistema operacional:
 
 - [**install_Linux.sh**](install_Linux.sh): Feita para sistemas operacionais baseados em Linux (utilizamos Ubuntu, por padrão). Rode com `./install_Linux.sh`, onde ./ é a sua pasta atual.
 
