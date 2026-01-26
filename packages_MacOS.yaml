@@ -1,0 +1,71 @@
+name: hadrex
+channels:
+  - conda-forge
+dependencies:
+  # -------------------------------------------------------------------------
+  # Python
+  # -------------------------------------------------------------------------
+  # We pin a modern Python mainly to keep ROOT/PYTHIA resolution fast and
+  # reproducible. Adjust if a specific experiment stack requires otherwise.
+  - python=3.13
+  # -------------------------------------------------------------------------
+  # Build & toolchain (C / C++ / Fortran)
+  # -------------------------------------------------------------------------
+  # Enough to compile ROOT-dependent analysis code and small utilities.
+  - clang
+  - clangxx
+  - gfortran # Only meaningful change from Ubuntu to MacOS (replaces gfortran_linux-64)
+  - make
+  - cmake
+  # -------------------------------------------------------------------------
+  # Core scientific / C++ libraries
+  # -------------------------------------------------------------------------
+  # Widely used by HEP codes. Light and safe to keep.
+  - boost-cpp
+  - gsl
+  - eigen
+  # -------------------------------------------------------------------------
+  # Parallelization & workflow helpers
+  # -------------------------------------------------------------------------
+  # GNU parallel is useful for parallel workflows (bash scripts in parallel).
+  # OpenMP is a useful tool for C++ parallelization (libomp library, with
+  # flag "-fopenmp").
+  - parallel
+  - libomp
+  # -------------------------------------------------------------------------
+  # ROOT and HEP
+  # -------------------------------------------------------------------------
+  # ROOT already pulls all required system libraries on conda-forge, so we do
+  # NOT list low-level X11 / COS6 compatibility packages explicitly anymore.
+  - root=6.34.10
+  # Python-side HEP analysis stack
+  - awkward         # Columnar data (ROOT TTrees --> arrays)
+  - uproot          # Read ROOT files without ROOT
+  - vector          # Lorentz vectors (integrates with awkward)
+  - particle        # PDG ID <--> particle name utilities
+  - iminuit         # Minuit minimizer bindings for Python
+  - hist            # Histogramming compatible with uproot/awkward
+  - mplhep          # Publication-style HEP plots
+  # -------------------------------------------------------------------------
+  # Event generators
+  # -------------------------------------------------------------------------
+  - pythia8=8.312
+  # -------------------------------------------------------------------------
+  # Scientific Python stack
+  # -------------------------------------------------------------------------
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - seaborn # seaborn is optional but nice for quick exploratory plots
+  # ML stack (keep only if actively used)
+  - scikit-learn
+  - pytorch
+  # -------------------------------------------------------------------------
+  # Utilities & I/O
+  # -------------------------------------------------------------------------
+  - lxml            # XML parsing (used by some HEP configs)
+  - gawk            # Handy for lightweight text processing in scripts
+  - ffmpeg          # Required for matplotlib animations (.mp4)
+  # Interactive work
+  - jupyter
