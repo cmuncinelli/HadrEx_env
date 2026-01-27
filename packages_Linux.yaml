@@ -28,10 +28,7 @@ dependencies:
   # Parallelization & workflow helpers
   # -------------------------------------------------------------------------
   # GNU parallel is useful for parallel workflows (bash scripts in parallel).
-  # OpenMP is a useful tool for C++ parallelization (libomp library, with
-  # flag "-fopenmp").
   - parallel
-  - libomp
   # -------------------------------------------------------------------------
   # ROOT and HEP
   # -------------------------------------------------------------------------
