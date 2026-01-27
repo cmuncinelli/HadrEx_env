@@ -35,11 +35,11 @@ source "$HOME/.bashrc"
 mamba update -n base -y mamba conda
 
 ### --- Create environment ---
-mamba env create -f "${BASEDIR}/install/packages_Linux.yaml"
+mamba env create -f "${BASEDIR}/packages_Linux.yaml"
 
 ### --- Auto-activate environment (avoid duplicates) ---
 # Checking if the "conda activate hadrex" line is already in the .bashrc (should not add it twice!)
-ENV_NAME=$(grep -E "^name:" install/packages_Linux.yaml | awk '{print $2}')
+ENV_NAME=$(grep -E "^name:" packages_Linux.yaml | awk '{print $2}')
 
 if ! grep -Fxq "conda activate ${ENV_NAME}" "$HOME/.bashrc"; then
   echo "conda activate ${ENV_NAME}" >> "$HOME/.bashrc"

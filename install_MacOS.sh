@@ -58,11 +58,11 @@ source "$HOME/.zshrc"
 mamba update -n base -y mamba conda
 
 ### --- Create environment ---
-mamba env create -f "${BASEDIR}/install/packages_MacOS.yaml"
+mamba env create -f "${BASEDIR}/packages_MacOS.yaml"
 
 ### --- Auto-activate environment (avoid duplicates) ---
 # Checking if the "conda activate hadrex" line is already in the .zshrc
-ENV_NAME=$(grep -E "^name:" install/packages_MacOS.yaml | awk '{print $2}')
+ENV_NAME=$(grep -E "^name:" packages_MacOS.yaml | awk '{print $2}')
 
 if ! grep -Fxq "conda activate ${ENV_NAME}" "$HOME/.zshrc"; then
   echo "conda activate ${ENV_NAME}" >> "$HOME/.zshrc"
